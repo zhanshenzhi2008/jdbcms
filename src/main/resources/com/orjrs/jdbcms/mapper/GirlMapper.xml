@@ -1,0 +1,25 @@
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.orjrs.jdbcms.mapper.GirlMapper">
+    <sql id="table">girl</sql>
+    <sql id="selectFields">id, name, age, sex, address, cup_size cupSize</sql>
+
+    <!-- 查询 -->
+    <select id="getGirlById" resultType="com.orjrs.jdbcms.model.Girl">
+        SELECT
+        <include refid="selectFields"/>
+        FROM
+        <include refid="table"/>
+        WHERE
+        id = #{id}
+    </select>
+
+    <!-- 插入 -->
+    <insert id="saveGirl" useGeneratedKeys="true" keyProperty="id">
+        insert
+        <include refid="table"/>
+        (id, name, age, sex, address, cup_size)
+        values (#{id}, #{name}, #{age}, #{sex}, #{address}, #{cupSize})
+    </insert>
+</mapper>
