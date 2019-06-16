@@ -17,7 +17,8 @@ import java.util.Map;
  * CreateDate:2019/3/10 19:24
  */
 @Configuration
-@PropertySource(value = "classpath:application-db.yml")// 以前版本是不用配的，自动根据application-后缀.yml来自动读取
+// 以前版本是不用配PropertySource的，自动根据application-后缀.yml来自动读取 但这里添加无效。 我暂时使用spring.profile.include
+// @PropertySource(value = {"classpath:application-db.yml"}, ignoreResourceNotFound = true)
 public class DataSourceConfig {
 
     //    /**

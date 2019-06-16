@@ -3,18 +3,18 @@ spring:
     druid:
       master:
         name: masterDB
-        type: com.zaxxer.hikari.HikariDataSource
         driver-class-name: com.mysql.cj.jdbc.Driver
-        jdbc-url: jdbc:mysql://192.168.135.128:3306/orjrs?useUnicode=true&characterEncoding=utf8&verifyServerCertificate=false&useSSL=false&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
+        type: com.zaxxer.hikari.HikariDataSource
         username: root
         password: mysql572601 #mysql版本号
-
+        jdbc-url: jdbc:mysql://192.168.135.128:3306/orjrs?useUnicode=true&characterEncoding=utf8&verifyServerCertificate=false&useSSL=false&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
       slave:
         name: slaveDB
-        type: com.zaxxer.hikari.HikariDataSource
         driver-class-name: com.mysql.cj.jdbc.Driver
+        type: com.zaxxer.hikari.HikariDataSource
         url: jdbc:mysql://192.168.135.130:3306/orjrs?useUnicode=true&characterEncoding=utf8&verifyServerCertificate=false&useSSL=false&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
         username: root
         password: mysql5726 #mysql版本号
+
 mybatis:
   config-location: classpath:mybatis-config.xml
